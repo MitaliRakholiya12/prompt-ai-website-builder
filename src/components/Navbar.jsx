@@ -10,8 +10,8 @@ const Navbar = () => {
         <div className="text-2xl font-bold text-gray-900 md:flex gap-5">BROADERAI
           <nav className="hidden md:flex items-center gap-8">
           <a href="/pricing" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Pricing</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Marketplace</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Integrations</a>
+          <a href="/marketplace" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Marketplace</a>
+          <a href="/integrations" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Integrations</a>
           <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Blog</a>
           <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Docs</a>
           <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Community</a>

@@ -62,6 +62,34 @@ const cardVariants = {
     },
   }),
 };
+const handlePayment = async (amount, planName) => {
+  const res = await fetch("http://localhost:5000/create-order", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ amount }),
+  });
+
+  const order = await res.json();
+
+  const options = {
+    key: "YOUR_RAZORPAY_KEY",
+    amount: order.amount,
+    currency: "INR",
+    name: "AI Website Builder",
+    description: planName + " Plan",
+    order_id: order.id,
+    handler: function (response) {
+      alert("Payment Successful!");
+      console.log(response);
+    },
+    theme: {
+      color: "#6366F1",
+    },
+  };
+
+  const rzp = new window.Razorpay(options);
+  rzp.open();
+};
 
 const PricingPage = () => {
   return (
@@ -122,16 +150,19 @@ const PricingPage = () => {
               </ul>
 
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`mt-8 w-full py-3 rounded-xl font-semibold transition ${
-                  plan.popular
-                    ? "bg-blue-600 text-white hover:bg-blue-700"
-                    : "bg-gray-900 text-white hover:bg-gray-800"
-                }`}
-              >
-                {plan.button}
-              </motion.button>
+  onClick={() => handlePayment(999, "Pro")}
+  className="mt-8 w-full py-3 rounded-xl bg-purple-600 text-white"
+>
+  Start Pro Trial
+</motion.button>
+<motion.button
+  onClick={() => handlePayment(2999, "Business")}
+  className="mt-8 w-full py-3 rounded-xl bg-gray-900 text-white"
+>
+  Contact Sales
+</motion.button>
+
+
             </motion.div>
           ))}
 
