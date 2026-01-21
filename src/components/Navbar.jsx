@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
+import logo from "../assets/broader ai.png";
 
 const Navbar = () => {
   const navigate = useNavigate()
@@ -7,16 +8,14 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="w-full px-5 py-5 flex items-center justify-between">
-        <div className="text-2xl font-bold text-gray-900 md:flex gap-5">BROADERAI
-          <nav className="hidden md:flex items-center gap-8">
-          <a href="/pricing" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Pricing</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Marketplace</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Integrations</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Blog</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Docs</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 text-sm font-medium">Community</a>
-        </nav>
-        </div>
+       <div className="flex items-center gap-5">
+  <img
+    src={logo}
+    alt="BROADERAI Logo"
+    className="h-10 md:h-11 w-auto"
+  />
+</div>
+
 
         
 

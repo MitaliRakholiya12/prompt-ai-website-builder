@@ -33,7 +33,7 @@ export default function Register() {
     <div className="min-h-screen w-full bg-gray-50 flex flex-col items-center justify-center p-4">
       {/* Logo */}
       <div className="mb-8">
-        <Link to="/" className="text-3xl font-bold text-gray-900 tracking-tight">CREDO</Link>
+        <Link to="/" className="text-3xl font-bold text-gray-900 tracking-tight">BROADERAI</Link>
       </div>
 
       <div className="w-full max-w-[400px] bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
